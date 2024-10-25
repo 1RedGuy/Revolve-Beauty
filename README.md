@@ -1,1 +1,1 @@
-# Resolve-Beauty-
+# Resolve-Beauty
