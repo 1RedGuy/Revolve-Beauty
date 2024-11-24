@@ -1,0 +1,143 @@
+/*<section class="bg-white dark:bg-gray-900">
+      <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+          <div class="mr-auto place-self-center lg:col-span-7">
+              <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Payments tool for software companies</h1>
+              <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.</p>
+              <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                  Get started
+                  <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </a>
+              <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                  Speak to Sales
+              </a> 
+          </div>
+          <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup"></img>
+          </div>                
+        </div>
+      </section>*/
+
+This is for hero section 
+---------------
+const HeroSection = () => {
+  return (
+    <section className="bg-customColor h-[75vh] w-full">
+      <div className="h-full flex items-center justify-between px-8"> {/* Added padding */}
+        {/* Text Section */}
+        <div className="w-1/2"> {/* Limits text section width */}
+          <h1 className="text-4xl font-bold text-white">Where Beauty Meets Comfort</h1>
+          <p className="text-gray-300 mt-4">
+            From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.
+          </p>
+          <a className="text-blue-500 mt-6 inline-block">Learn more</a>
+        </div>
+        
+        {/* Image Section */}
+        <div className="hidden lg:flex lg:mt-0 lg:col-span-5 items-end h-[75vh] w-full"> {/* Align image to bottom */}
+          <img src="google.png" alt="" className="max-h-full object-contain" />
+        </div>  
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
+
+---
+// components/HeroSection.jsx
+
+const HeroSection = () => {
+  return (
+    <section className="h-[75vh] flex items-center justify-center bg-customColor">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full h-full relative">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center p-6 text-center lg:text-left">
+          <p className="text-lg lg:text-xl mb-4">
+            BEAUTY STUDIO 
+          </p>
+          <h1 className="text-4xl lg:text-6xl text-Dark_Grey font-bold mb-4">
+            Where Comfort Meets Beauty
+          </h1>
+          <p className="text-lg lg:text-xl mb-4">
+            Your one-stop shop for all things beauty and wellness.
+          </p>
+          <p className="text-lg lg:text-xl mb-4">
+            Your one-stop shop for all things beauty and wellness.
+          </p>
+          <p className="text-lg lg:text-xl mb-4">
+            Your one-stop shop for all things beauty and wellness.
+          </p>
+          <a href="#" className="text-blue-500 underline">
+            Learn more
+          </a>
+        </div>
+
+        <div className="hidden lg:flex lg:w-1/2 items-end w-full h-full relative">
+          <img src="google.png" alt="Hero Image" className="absolute bottom-0 w-full h-auto object-contain" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
+-----
+const TickCircleIcon = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 20 20"
+    className={`size-5 inline ${className}`}
+  >
+    <circle cx="10" cy="10" r="10" className="fill-pink-100" />
+    <path
+      fillRule="evenodd"
+      d="M13.857 8.191a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+      clipRule="evenodd"
+      className="fill-pink-400"
+    />
+  </svg>
+);
+
+export default function HeroSection() {
+  return (
+    <section className="relative bg-white flex flex-col lg:flex-row items-center lg:items-start lg:justify-between px-6 lg:px-20 py-12 lg:py-0 lg:pr-0 border-b-2 border-gray-300">
+      {/* Left Image */}
+      <div className="mt-8 lg:mt-0 lg:w-3/5 flex">
+        <div className="relative w-80 h-80 lg:w-full lg:h-full">
+          <img
+            src="pink1.png"
+            alt=""
+            layout="fill"
+            objectFit="cover"
+            className=""
+          />
+        </div>
+      </div>
+    
+      {/* Right Content */}
+      <div className="lg:w-2/5 text-center lg:text-right lg:pr-20">
+        <h2 className="text-pink-500 text-2xl uppercase font-semibold mb-2">
+          Beauty Salon&nbsp;&nbsp;&nbsp;__
+        </h2>
+        <h1 className="text-gray-900 text-4xl lg:text-7xl font-bold leading-tight mb-4 lg:py-3 lg:leading-11 text">
+          Glow Your Face <br />
+          & Vitality With <br />
+          Our Best Service
+        </h1>
+        <p className="text-gray-600 text-lg mb-6">
+        <TickCircleIcon /> Facials and skin care treatments, hair-cutting. <br />
+        <TickCircleIcon /> waxing and other forms of hair removal, nail treatments. <br />
+        <TickCircleIcon /> Complementary care such as aromatherapy and massages.
+        </p>
+        <div className="flex justify-center lg:justify-start gap-4">
+          <button className="bg-pink-500 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-pink-600 transition">
+            Book Appointment
+          </button>
+          <button className="bg-gray-100 text-gray-800 font-medium py-3 px-6 rounded-lg shadow-md hover:bg-gray-200 transition">
+            Know Our Services
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+  
+}
