@@ -3,16 +3,16 @@ import MenuIcon from "./icons/MenuIcon";
 
 const Header = () => {
   return (
-    <header className="bg-white text-FFFFFF py-[25px] sticky top-0 z-50">
+    <header className="bg-white text-FFFFFF py-[15px] sticky top-0 z-50">
       <div className="w-full flex items-center lg:py-5 pb-0 px-6 lg:p-9">
         <div className="flex-1 text-2xl text-gray-500 hero_lg:pl-[150px]">
           <a href="/">Revolve Beauty</a>
         </div>
 
         <nav className="hidden hero_lg:flex justify-center hero_lg:space-x-20 w-90 text-lg text-gray-500 pr-[160px]">
-          <a href="#home" className="text-black">Home</a>
+          <a href="/" className="text-black">Home</a>
           <a href="#about">About</a>
-          <a href="#services">Our Services</a>
+          <a href="/services/fillers-botox">Our Services</a>
           <a href="#contact">Contact us</a>
           <a href="#icon" className="flex items-center">
           <LanguageChangeIcon />

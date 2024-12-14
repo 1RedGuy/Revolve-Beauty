@@ -1,0 +1,202 @@
+const IntroductionSection = () => {
+  return (
+    <section class="bg-pink-50 py-16">
+  <div class="container mx-auto px-6">
+
+    <div class="text-center mb-12">
+      <p class="text-pink-500 font-bold text-sm uppercase">Services</p>
+      <h2 class="text-4xl font-bold text-gray-800 leading-snug">
+        We are experienced in making you <br />
+        More Beautiful
+      </h2>
+    </div>
+
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <div>
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">Beauty treatments</h3>
+        <p class="text-gray-600 mb-6">
+          The beauty industry has grown so much that it can be hard to keep track
+          of the treatments that are available.
+        </p>
+        <button class="bg-pink-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-pink-600">
+          Book now
+        </button>
+      </div>
+
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <h4 class="text-lg font-semibold text-gray-800 mb-2">Hair Treatments</h4>
+          <p class="text-gray-600 text-sm mb-4">
+            Project recently success title century to outside sport.
+          </p>
+          <p class="text-pink-500 font-bold text-lg">$299</p>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <h4 class="text-lg font-semibold text-gray-800 mb-2">Skincare & Facial</h4>
+          <p class="text-gray-600 text-sm mb-4">
+            Project recently success title century to outside sport.
+          </p>
+          <p class="text-pink-500 font-bold text-lg">$399</p>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <h4 class="text-lg font-semibold text-gray-800 mb-2">Facial Massage</h4>
+          <p class="text-gray-600 text-sm mb-4">
+            Project recently success title century to outside sport.
+          </p>
+          <p class="text-pink-500 font-bold text-lg">$499</p>
+        </div>
+
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+          <h4 class="text-lg font-semibold text-gray-800 mb-2">Ultra Glow Therapy</h4>
+          <p class="text-gray-600 text-sm mb-4">
+            Project recently success title century to outside sport.
+          </p>
+          <p class="text-pink-500 font-bold text-lg">$599</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  );
+}
+
+export default IntroductionSection;
+
+
+-----
+
+
+const IntroductionSection = () => {
+  return (
+    <section className="flex-col border-2 border-pink-500 lg:m-28 h-[890px]">
+
+        {/* Up part */}
+        <div className="mb-14">
+            <h2 className="text-pink-500 mb-3 text-base lg:text-xl uppercase font-semibold">Services</h2>
+            <h1 className="text-gray-900 text-3xl lg:text-4xl font-bold">
+                We are expirienced <br />
+                in making you <br />
+                More Beautiful <br />
+            </h1>
+        </div>
+    
+        {/* Down part */}
+        <div className="h-full">
+            <div>
+                {/* Beauty treatments div*/}
+                <h2>Beauty treatments</h2>
+                <p>
+                    The beauty industry has grown so much that it can be hard to 
+                    keep track of the treatments that are available.
+                </p>
+                <button>
+                    Learn more 
+                </button>
+            </div>
+
+            <div>
+                {/* image */}
+                <img className="border-2 border-pink-500"/>
+            </div>
+
+            <div>
+                {/* 4 cards div */}
+            </div>
+        </div>
+    </section>
+  );
+}
+
+export default IntroductionSection;
+
+-------
+const Card = ({ title, description, price }) => {
+    return (
+      <div className="bg-white">
+        <h3 className="text-xl font-semibold text-gray-800 pt-8 mr-[140px] mb-2 border-t-[2px] border-pink-500">{title}</h3>
+        <p className="text-gray-600 text-sm mb-4">{description}</p>
+        <p className="text-pink-500 font-bold text-xl">$ {price}</p>
+      </div>
+    );
+  };
+  
+  const IntroductionSection = () => {
+    return (
+      <section className="mt-32 mb-24">
+        <div className="container h-[960px] lg:mx-auto-[184px] mx-auto">
+          {/* Heading Section */}
+          <div className="text-center lg:text-left mb-12 lg:mb-20">
+            <h2 className="text-pink-500 mb-3 text-2xl uppercase font-semibold">
+              Services
+            </h2>
+            <h2 class="text-5xl leading-tight md:text-6xl font-bold text-gray-800 md:leading-tight">
+              We are experienced <br />
+              in making you <br />
+              More Beautiful
+            </h2>
+          </div>
+  
+          {/* Main Content Section */}
+          <div className="flex flex-wrap lg:flex-nowrap">
+            {/* Column 1: Text and Button */}
+            <div className="w-full lg:w-[20%] lg:mr-12 lg:pt-20 lg:border-t-[3px] border-pink-500">
+              <h3 className="text-4xl font-bold text-gray-800 mb-6">
+                Beauty <br/>
+                treatments
+              </h3>
+              <p className="text-gray-600 text-lg mb-10">
+                The beauty industry has grown so much that it can be hard to keep
+                track of the treatments that are available.
+              </p>
+              <button className="bg-pink-500 text-white shadow-2xl shadow-pink-200 text-lg font-medium rounded-full">
+                Learn More
+              </button>
+            </div>
+  
+            {/* Column 2: Image Placeholder */}
+            <div className="lg:w-[25%] lg:mr-12 w-full">
+              <div className="border-2 border-dashed border-gray-300 bg-gray-100 h-full flex items-center justify-center rounded-lg">
+                <span className="text-gray-400 text-sm">Image Placeholder</span>
+              </div>
+            </div>
+  
+            {/* Column 3: Cards */}
+            <div className="w-full lg:w-auto lg:ml-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card
+                  title="Hair Treatments"
+                  description="Project recently s uccess title century to outsidesport."
+                  price="299"
+                />
+                <Card
+                  title="Skincare & Facial"
+                  description="Project recently success title century to outside sport."
+                  price="399"
+                />
+                <Card
+                  title="Facial Massage"
+                  description="Project recently success title century to outside sport."
+                  price="499"
+                />
+                <Card
+                  title="Ultra Glow Therapy"
+                  description="Project recently success title century to outside sport."
+                  price="599"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  };
+  
+  export default IntroductionSection;
+  

@@ -1,13 +1,16 @@
 import React from 'react';
-import Header from '../components/Header'; 
-import HeroSection from '../components/sections/HeroSection';
-import IntroductionSection from '../components/sections/IntroductionSection';
+import { Header, Footer } from '../components';
+import { GallerySection, HeroSection, IntroductionSection, TestimonialSection } from '../components/sections';
 
 function Home() {
     return (
         <div className="bg-white min-h-screen">
             <Header />
             <HeroSection />
+            <IntroductionSection />
+            <TestimonialSection />
+            <GallerySection />
+            <Footer />
         </div>
     );
 }

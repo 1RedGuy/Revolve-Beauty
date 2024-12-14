@@ -17,7 +17,7 @@ const HeroSection = () => {
         <h2 className="text-pink-500 text-2xl hero_lg:text-3xl pt-3 hero_lg:pt-0 uppercase font-semibold mb-2">
           Beauty Studio&nbsp;&nbsp;__
         </h2>
-        <h1 className="text-gray-900 text-4xl lg:text-7xl font-bold leading-tight mb-4 pt-3 hero_lg:pt-7 lg:leading-[80px] text">
+        <h1 className="text-gray-900 text-6xl lg:text-7xl font-bold leading-tight mb-4 pt-3 hero_lg:pt-7 lg:leading-[80px] text">
           Glow Your Face <br />
           & Vitality With <br />
           Our Best Service

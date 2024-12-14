@@ -1,0 +1,7 @@
+.image-fixed {
+    @apply w-full h-auto;
+  
+    @media (max-width: 1024px) {
+      @apply w-[1920px] h-[1080px];
+    }
+  }
