@@ -1,13 +1,13 @@
 const Card = ({ title, description, price }) => {
   return (
-    <div className="bg-opacity-0 mr-24">
-      <div className="w-28 h-[2px] bg-pink-500"></div>
-      <h3 className="text-xl w-28 font-semibold text-gray-800 pt-4 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm mb-4">{description}</p>
-      <p className="text-pink-500 font-bold text-xl">$ {price}</p>
+    <div className="mr-24">
+      <div className="h-[2px] w-32 bg-pink-500"></div>
+      <h3 className="mb-2 w-34 pt-4 text-xl font-semibold text-gray-800">
+        {title}
+      </h3>
+      <p className="mb-4 text-sm text-gray-600">{description}</p>
     </div>
   );
 };
 
-  export default Card;
-  
+export default Card;

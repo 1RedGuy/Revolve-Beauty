@@ -1,22 +1,28 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const LanguageChangeIcon = ({ className }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  let timeoutId;
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutId);
+    setIsOpen(true);
   };
 
-  const handleLanguageChange = (language) => {
-    console.log(`Language changed to: ${language}`);
-    setIsDropdownOpen(false);
+  const handleMouseLeave = () => {
+    timeoutId = setTimeout(() => {
+      setIsOpen(false);
+    }, 100);
   };
 
   return (
-    <div className={`relative ${className}`}>
+    <div
+      className={`relative ${className}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <button
-        onClick={toggleDropdown}
-        className="w-6 h-6 flex items-center justify-center"
+        className="flex h-6 w-6 items-center justify-center hover:cursor-default"
         aria-label="Change Language"
       >
         <svg
@@ -25,7 +31,7 @@ const LanguageChangeIcon = ({ className }) => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-6 h-6"
+          className="h-6 w-6"
         >
           <path
             strokeLinecap="round"
@@ -34,20 +40,22 @@ const LanguageChangeIcon = ({ className }) => {
           />
         </svg>
       </button>
-      {isDropdownOpen && (
-        <div className="absolute right-0 mt-2 w-28 bg-white border rounded shadow-lg">
-          <button
-            onClick={() => handleLanguageChange('en')}
-            className="block w-full px-4 py-2 text-left hover:bg-gray-100"
-          >
-            English
-          </button>
-          <button
-            onClick={() => handleLanguageChange('bg')}
-            className="block w-full px-4 py-2 text-left hover:bg-gray-100"
-          >
-            Български
-          </button>
+      {isOpen && (
+        <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-28 rounded border-[1px] border-studio_pink bg-white overflow-hidden">
+          <div className="block"> 
+            <button
+              onClick={() => console.log("Language changed to: en")}
+              className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+            >
+              English
+            </button>
+            <button
+              onClick={() => console.log("Language changed to: bg")}
+              className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+            >
+              Български
+            </button>
+          </div>
         </div>
       )}
     </div>

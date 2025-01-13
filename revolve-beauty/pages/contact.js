@@ -1,4 +1,5 @@
-import Header from '../components/Header';
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function ContactForm() {
   const handleSubmit = async (e) => {
@@ -7,73 +8,76 @@ export default function ContactForm() {
     const formData = new FormData(e.target);
 
     try {
-      const response = await fetch('https://formspree.io/f/xjkvelaz', {
-        method: 'POST',
+      const response = await fetch("https://formspree.io/f/xjkvelaz", {
+        method: "POST",
         body: formData,
         headers: {
-          Accept: 'application/json',
+          Accept: "application/json",
         },
       });
 
       if (response.ok) {
-        alert('Form submitted successfully!');
+        alert("Form submitted successfully!");
         e.target.reset();
       } else {
-        alert('There was an error submitting the form. Please try again.');
+        alert("There was an error submitting the form. Please try again.");
       }
     } catch (error) {
-      console.error('Error submitting the form:', error);
-      alert('There was an issue with the submission. Please check your connection and try again.');
+      console.error("Error submitting the form:", error);
+      alert(
+        "There was an issue with the submission. Please check your connection and try again.",
+      );
     }
   };
 
   return (
     <div>
       <Header />
-      <div
-        className="grid md:grid-cols-2 gap-16 items-center relative overflow-hidden p-8 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-3xl max-w-6xl mx-auto bg-white mt-4 font-[sans-serif] before:absolute before:right-0 before:w-[300px] before:bg-blue-400 before:h-full max-md:before:hidden"
-      >
+      <div className="mx-auto mt-10 grid max-w-6xl items-start gap-16 rounded-3xl bg-white p-8 font-[sans-serif] shadow-[0_2px_10px_-3px_rgba(253,131,208,0.7)] md:grid-cols-2">
+        {/* Form Section */}
         <div>
-          <h2 className="text-gray-800 text-3xl font-extrabold">Get In Touch</h2>
-          <p className="text-sm text-gray-500 mt-4 leading-relaxed">
-            Have a specific inquiry or looking to explore new opportunities? Our experienced team is ready to engage
-            with you.
+          <h2 className="text-3xl font-extrabold text-gray-800">
+            Get In Touch
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-gray-500">
+            Have a specific inquiry or looking to explore new opportunities? Our
+            experienced team is ready to engage with you.
           </p>
 
           <form onSubmit={handleSubmit}>
-            <div className="space-y-4 mt-8">
+            <div className="mt-8 space-y-4">
               <input
                 type="text"
                 name="name"
                 placeholder="Full Name"
                 required
-                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
+                className="w-full border-b border-gray-300 bg-white px-2 py-3 text-sm text-gray-800 outline-none focus:border-studio_pink"
               />
               <input
                 type="number"
                 name="phone"
                 placeholder="Phone No."
                 required
-                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
+                className="w-full border-b border-gray-300 bg-white px-2 py-3 text-sm text-gray-800 outline-none focus:border-studio_pink"
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Email"
                 required
-                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
+                className="w-full border-b border-gray-300 bg-white px-2 py-3 text-sm text-gray-800 outline-none focus:border-studio_pink"
               />
               <textarea
                 name="message"
                 placeholder="Write Message"
                 required
-                className="px-2 pt-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
+                className="w-full border-b border-gray-300 bg-white px-2 pt-3 text-sm text-gray-800 outline-none focus:border-studio_pink"
               />
             </div>
 
             <button
               type="submit"
-              className="mt-8 flex items-center justify-center text-sm w-full rounded-md px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white"
+              className="mt-8 flex w-full items-center justify-center rounded-md bg-studio_pink px-6 py-3 text-sm text-white hover:bg-opacity-85"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -94,15 +98,122 @@ export default function ContactForm() {
             </button>
           </form>
         </div>
-        <div className="z-10 relative h-full max-md:min-h-[350px]">
+
+        {/* Map Section */}
+        <div className="relative h-full">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2643.83680769475!2d23.336879111308573!3d42.65710877104659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8439aa06c4c9%3A0xa5da18b56993a130!2sStudentski%20Kompleks%2C%20ulitsa%20%22Professor%20Georgi%20Zlatarski%22%203%2C%201700%20Sofia!5e1!3m2!1sen!2sbg!4v1732539479669!5m2!1sen!2sbg"
-            className="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+            className="left-0 top-0 h-full w-full rounded-md"
             frameBorder="0"
             allowFullScreen
           ></iframe>
         </div>
       </div>
+
+      {/* Contact Options Below */}
+      <div className="mx-auto mt-14 grid md:grid-cols-3">
+        <div className="-mr-4 rounded-md p-6 text-center lg:ml-28">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gray-300">
+            <svg
+              height="24"
+              width="24"
+              strokeWidth="2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1792 1792"
+            >
+              <path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z" />
+            </svg>
+          </div>
+          <h3 className="mt-4 text-xl font-semibold text-black">Email us:</h3>
+          <p className="mt-2 text-lg text-gray-500">
+            Email us for general queries, including marketing and partnership
+            opportunities.
+          </p>
+          <a
+            href="mailto:hello@flowbite.com"
+            className="mt-4 block text-studio_pink"
+          >
+            maryanngelia64@gmail.com
+          </a>
+        </div>
+
+        <div className="rounded-md p-6 text-center lg:mx-12">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              className="h-6 w-6 text-gray-800"
+            >
+              <path d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
+            </svg>
+          </div>
+          <h3 className="mt-4 text-xl font-semibold text-black">Call us:</h3>
+          <p className="mt-2 text-lg text-gray-500">
+            Call us to speak to a member of our team. We are always happy to
+            help.
+          </p>
+          <a href="tel:+16467865060" className="mt-4 block text-studio_pink">
+            +359877183323
+          </a>
+        </div>
+
+        <div className="ounded-md -ml-4 p-6 text-center lg:mr-28">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-lg bg-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="48"
+              width="48"
+              viewBox="0 0 48 48"
+              className="h-8 w-8 text-gray-800"
+            >
+              <path d="M24 4c-7.73 0-14 6.27-14 14 0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14zm0 19c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" />
+              <path d="M0 0h48v48h-48z" fill="none" />
+            </svg>
+          </div>
+          <h3 className="mt-4 text-xl font-semibold text-black">Location</h3>
+          <p className="mt-2 text-lg text-gray-500">
+            Feel free to stop by and visit us at our location. We look forward
+            to welcoming you!
+          </p>
+          <a href="/support" className="mt-4 block text-studio_pink">
+            3 Prof. Georgi Zlatarski St., Sofia, Bulgaria.
+          </a>
+        </div>
+      </div>
+
+      <footer className="mt-10 p-4">
+        <div className="mx-auto w-full max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            © 2024{" "}
+            <a href="https://flowbite.com/" className="hover:underline">
+              Revolve Beauty
+            </a>
+            . All Rights Reserved.
+          </span>
+          <ul className="mt-3 flex flex-wrap items-center text-sm font-medium text-gray-500 sm:mt-0 dark:text-gray-400">
+            <li>
+              <a href="#" className="me-4 hover:underline md:me-6">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#" className="me-4 hover:underline md:me-6">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="#" className="me-4 hover:underline md:me-6">
+                Licensing
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </div>
   );
 }

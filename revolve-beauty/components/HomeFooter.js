@@ -1,6 +1,6 @@
-const Footer = () => {
+const HomeFooter = () => {
   return (
-    <footer className="-mt-20 p-4">
+    <footer className="bg-gradient-to-l from-studio_pink/25 to-transparent p-4 pt-16">
       <div className="mx-auto w-full max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2024{" "}
@@ -36,4 +36,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default HomeFooter;
