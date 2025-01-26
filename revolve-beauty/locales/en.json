@@ -1,0 +1,23 @@
+{
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Our Services",
+      "contact": "Contact us",
+      "servicesDropdown": {
+        "fillersBotox": "Fillers & Botox",
+        "minimalInvasive": "Minimal Invasive",
+        "nonInvasive": "Non Invasive"
+      }
+    },
+    "hero": {
+      "title": "Glow Your Face & Vitality With Our Best Service",
+      "subtitle": "Beauty Studio",
+      "treatments": "Beauty treatments",
+      "description": "The beauty industry has grown so much that it can be hard to keep track of the treatments that are available.",
+      "buttons": {
+        "book": "Book Appointment",
+        "services": "Know Our Services"
+      }
+    }
+  } 

@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 
 const LanguageChangeIcon = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
   let timeoutId;
 
   const handleMouseEnter = () => {
@@ -13,6 +15,12 @@ const LanguageChangeIcon = ({ className }) => {
     timeoutId = setTimeout(() => {
       setIsOpen(false);
     }, 100);
+  };
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem('language', lang);
+    setIsOpen(false);
   };
 
   return (
@@ -44,14 +52,18 @@ const LanguageChangeIcon = ({ className }) => {
         <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-28 rounded border-[1px] border-studio_pink bg-white overflow-hidden">
           <div className="block"> 
             <button
-              onClick={() => console.log("Language changed to: en")}
-              className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+              onClick={() => handleLanguageChange('en')}
+              className={`block w-full px-4 py-2 text-left hover:bg-gray-100 ${
+                language === 'en' ? 'bg-gray-100' : ''
+              }`}
             >
               English
             </button>
             <button
-              onClick={() => console.log("Language changed to: bg")}
-              className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+              onClick={() => handleLanguageChange('bg')}
+              className={`block w-full px-4 py-2 text-left hover:bg-gray-100 ${
+                language === 'bg' ? 'bg-gray-100' : ''
+              }`}
             >
               Български
             </button>

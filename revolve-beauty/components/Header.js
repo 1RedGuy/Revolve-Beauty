@@ -2,26 +2,47 @@ import { useRouter } from "next/router";
 import LanguageChangeIcon from "./icons/LanguageChangeIcon";
 import MenuIcon from "./icons/MenuIcon";
 import { useState } from "react";
-import Link from "next/link";  // Import Link
+import Link from "next/link";
+import { useLanguage } from "../context/LanguageContext";
+import { useTranslation } from "../hooks/useTranslation";
 
 const Header = () => {
-
   const router = useRouter();
-  const isActive = (path) => router.pathname === path;
-
+  const { isClient } = useLanguage();
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   let timeoutId;
+
+  const isActive = (path) => router.pathname === path;
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutId);
     setIsOpen(true);
-  }
+  };
 
   const handleMouseLeave = () => {
     timeoutId = setTimeout(() => {
       setIsOpen(false);
     }, 100);
-  }
+  };
+
+  // Return English content during SSR, translated content after hydration
+  const renderContent = (key) => {
+    if (!isClient) {
+      // Default English values for SSR
+      const defaultValues = {
+        'nav.home': 'Home',
+        'nav.about': 'About',
+        'nav.services': 'Our Services',
+        'nav.contact': 'Contact us',
+        'nav.servicesDropdown.fillersBotox': 'Fillers & Botox',
+        'nav.servicesDropdown.minimalInvasive': 'Minimal Invasive',
+        'nav.servicesDropdown.nonInvasive': 'Non Invasive'
+      };
+      return defaultValues[key] || key;
+    }
+    return t(key);
+  };
 
   return (
     <header className="text-FFFFFF sticky top-0 z-50 bg-white py-[15px]">
@@ -39,7 +60,7 @@ const Header = () => {
               isActive("/") ? "text-black" : "text-gray-500"
             } hover:text-gray-700`}
           >
-            Home
+            {renderContent('nav.home')}
           </Link>
 
           <Link
@@ -48,11 +69,11 @@ const Header = () => {
               isActive("/about") ? "text-black" : "text-gray-500"
             } hover:text-gray-700`}
           >
-            About
+            {renderContent('nav.about')}
           </Link>
 
-          {/* Dropdown Menu for Services */}
-          <div className="relative group"
+          <div 
+            className="relative group"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -61,7 +82,7 @@ const Header = () => {
                 router.pathname.startsWith("/services") ? "text-black" : "text-gray-500"
               } hover:text-gray-700 hover:cursor-default`}
             >
-              Our Services
+              {renderContent('nav.services')}
             </span>
             {isOpen && (
               <div className="absolute left-1/2 transform -translate-x-1/2 w-48 bg-white border-[1px] border-studio_pink rounded-lg overflow-hidden mt-[8px]">
@@ -73,7 +94,7 @@ const Header = () => {
                       : "text-gray-500"
                   } hover:bg-gray-100 hover:text-gray-700`}
                 >
-                  Fillers & Botox
+                  {renderContent('nav.servicesDropdown.fillersBotox')}
                 </Link>
                 <Link
                   href="/services/minimal-invasive"
@@ -83,7 +104,7 @@ const Header = () => {
                       : "text-gray-500"
                   } hover:bg-gray-100 hover:text-gray-700`}
                 >
-                  Minimal Invasive
+                  {renderContent('nav.servicesDropdown.minimalInvasive')}
                 </Link>
                 <Link
                   href="/services/non-invasive"
@@ -93,7 +114,7 @@ const Header = () => {
                       : "text-gray-500"
                   } hover:bg-gray-100 hover:text-gray-700`}
                 >
-                  Non Invasive
+                  {renderContent('nav.servicesDropdown.nonInvasive')}
                 </Link>
               </div>
             )}
@@ -105,7 +126,7 @@ const Header = () => {
               isActive("/contact") ? "text-black" : "text-gray-500"
             } hover:text-gray-700`}
           >
-            Contact us
+            {renderContent('nav.contact')}
           </Link>
 
           <a href="" className="flex items-center">
@@ -116,7 +137,7 @@ const Header = () => {
         <button
           className="ml-auto text-black hover:text-gray-200 focus:outline-none hero_lg:hidden"
           aria-label="Toggle Menu"
-        > 
+        >
           <MenuIcon />
         </button>
       </div>

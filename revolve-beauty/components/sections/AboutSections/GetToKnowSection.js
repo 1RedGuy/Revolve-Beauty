@@ -14,6 +14,9 @@ const GetToknowSection = () => {
               beauty services that prioritize your satisfaction and well-being
             </p>
           </div>
+
+          <div className="relative pb-[56.25%] w-full overflow-hidden bg-black">
+
           <div class="mx-auto mt-16 max-w-4xl lg:mt-24">
             <dl class="grid grid-cols-1 gap-10 sm:gap-16 lg:grid-cols-2">
               <div class="relative pl-16">
@@ -120,6 +123,7 @@ const GetToknowSection = () => {
           </div>
         </div>
       </div>
+      </div>  
     </section>
   );
 };
