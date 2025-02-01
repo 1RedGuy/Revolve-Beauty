@@ -156,7 +156,7 @@ export default function ContactForm() {
             {renderContent('contact.email.description')}
           </p>
           <a
-            href="mailto:hello@flowbite.com"
+            href="mailto:maryanngelia64@gmail.com"
             className="mt-4 block text-studio_pink"
           >
             maryanngelia64@gmail.com
@@ -179,7 +179,7 @@ export default function ContactForm() {
           <p className="mt-2 text-lg text-gray-500">
             {renderContent('contact.call.description')}
           </p>
-          <a href="tel:+16467865060" className="mt-4 block text-studio_pink">
+          <a href="tel:+359877183323" className="mt-4 block text-studio_pink">
             +359877183323
           </a>
         </div>

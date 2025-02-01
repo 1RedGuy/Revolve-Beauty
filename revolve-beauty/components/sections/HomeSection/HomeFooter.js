@@ -50,7 +50,7 @@ const HomeFooter = () => {
               {renderContent('footer.links.contact')}
             </Link>
             <a 
-              href="https://www.instagram.com/revolvebeauty.bg/" 
+              href="https://www.instagram.com/drmaryann__aesthetician?igsh=MTNvZjZ0OXdreGxjZw==" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center space-x-2 text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-studio_pink"
