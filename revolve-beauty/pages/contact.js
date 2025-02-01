@@ -103,6 +103,7 @@ export default function ContactForm() {
 
             <button
               type="submit"
+              aria-label="Submit contact form"
               className="mt-8 flex w-full items-center justify-center rounded-md bg-studio_pink px-6 py-3 text-sm text-white hover:bg-opacity-85"
             >
               <svg
@@ -112,6 +113,7 @@ export default function ContactForm() {
                 fill="#fff"
                 className="mr-2"
                 viewBox="0 0 548.244 548.244"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"

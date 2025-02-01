@@ -269,6 +269,7 @@ const Header = () => {
                 <div className="flex space-x-6">
                   <button
                     onClick={() => handleLanguageChange('en')}
+                    aria-label="Switch to English language"
                     className={`text-lg ${
                       language === 'en' ? 'text-studio_pink font-medium' : 'text-gray-600'
                     }`}
@@ -277,6 +278,7 @@ const Header = () => {
                   </button>
                   <button
                     onClick={() => handleLanguageChange('bg')}
+                    aria-label="Switch to Bulgarian language"
                     className={`text-lg ${
                       language === 'bg' ? 'text-studio_pink font-medium' : 'text-gray-600'
                     }`}
