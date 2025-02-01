@@ -1,6 +1,7 @@
 import { useLanguage } from "../../../context/LanguageContext";
 import { useTranslation } from "../../../hooks/useTranslation";
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AboutSection = () => {
   const { isClient } = useLanguage();
@@ -49,9 +50,10 @@ const AboutSection = () => {
                 </p>
 
                 <div className="flex items-center pt-4">
-                  <a
+                  <Link 
                     href="#contact"
                     className="group inline-flex items-center text-lg font-medium text-studio_pink transition-colors duration-200 hover:text-pink-600"
+                    aria-label="Contact Dr. Marian for beauty treatments and consultations"
                   >
                     {renderContent('about.cta')}
                     <svg
@@ -59,6 +61,8 @@ const AboutSection = () => {
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
+                      aria-hidden="true"
+                      role="presentation"
                     >
                       <path
                         strokeLinecap="round"
@@ -67,7 +71,7 @@ const AboutSection = () => {
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
