@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import ServiceFooter from "@/components/sections/ServicesSections/ServiceFooter";
 import Header from "../../components/Header";
 import MISection from "@/components/sections/ServicesSections/MISection";
 
@@ -9,7 +9,7 @@ const MinimalInvasive = () => {
     <div>
         <Header />
         <MISection />
-        <Footer />
+        <ServiceFooter />
     </div>
   );
 };

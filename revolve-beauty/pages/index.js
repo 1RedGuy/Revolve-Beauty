@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "../components";
-import HomeFooter from "../components/HomeFooter";
+import HomeFooter from "../components/sections/HomeSection/HomeFooter";
 import {
   GallerySection,
   HeroSection,

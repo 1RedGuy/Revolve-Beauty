@@ -1,19 +1,42 @@
 import React from "react";
 import Link from "next/link";
+import { useLanguage } from "../../../context/LanguageContext";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 const TestimonialSection = () => {
+  const { isClient } = useLanguage();
+  const { t } = useTranslation();
+
+  const renderContent = (key) => {
+    if (!isClient) {
+      const defaultValues = {
+        'testimonial.subtitle': 'Many Customers gave their Feedback',
+        'testimonial.title': "We care about our customer's experience",
+        'testimonial.button': 'Check all of our reviews',
+        'testimonial.reviews.first.text': 'Amazing service, highly recommend to everyone looking for reliable and excellent quality.',
+        'testimonial.reviews.first.author': 'John Doe',
+        'testimonial.reviews.first.position': 'CEO, Rareblocks',
+        'testimonial.reviews.second.text': 'A fantastic experience. Their team went above and beyond to ensure our needs were met.',
+        'testimonial.reviews.second.author': 'Jane Smith',
+        'testimonial.reviews.second.position': 'Product Manager, Rareblocks',
+        'testimonial.reviews.third.text': 'Rareblocks helped us scale our business to new heights. Their attention to detail is unmatched.',
+        'testimonial.reviews.third.author': 'Sam Wilson',
+        'testimonial.reviews.third.position': 'Marketing Director, Rareblocks'
+      };
+      return defaultValues[key];
+    }
+    return t(key);
+  };
+
   return (
-    <section className="bg-gradient-to-l from-studio_pink/25 to-transparent py-12 sm:py-16 lg:py-20">
+    <section className="bg-gradient-to-l from-studio_pink/25 to-transparent sm:pb-16 lg:pb-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="text-xl font-medium text-gray-600">
-            {" "}
-            Many Customers gave their{" "}
-            <span className="italic text-pink-400">Feedback</span>{" "}
+            {renderContent('testimonial.subtitle')}
           </p>
           <h2 className="mt-4 text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl">
-            We care about our customer's{" "}
-            <span className="italic text-pink-400">experience</span>
+            {renderContent('testimonial.title')}
           </h2>
         </div>
 
@@ -23,7 +46,7 @@ const TestimonialSection = () => {
             className="border-b-2 border-gray-900 pb-2 text-base font-bold leading-7 text-gray-900 transition-all duration-200 hover:border-gray-500 hover:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
             target="_blank"
           >
-            Check all of our reviews
+            {renderContent('testimonial.button')}
           </Link>
         </div>
 
@@ -57,14 +80,13 @@ const TestimonialSection = () => {
                     ))}
                   </div>
                   <p className="mt-4 text-lg font-medium text-gray-900">
-                    "Amazing service, highly recommend to everyone looking for
-                    reliable and excellent quality."
+                    {renderContent('testimonial.reviews.first.text')}
                   </p>
                   <p className="mt-6 text-base font-medium text-gray-600">
-                    John Doe
+                    {renderContent('testimonial.reviews.first.author')}
                   </p>
                   <p className="text-base font-medium text-gray-400">
-                    CEO, Rareblocks
+                    {renderContent('testimonial.reviews.first.position')}
                   </p>
                 </div>
               </div>
@@ -88,14 +110,13 @@ const TestimonialSection = () => {
                     ))}
                   </div>
                   <p className="mt-4 text-lg font-medium text-gray-900">
-                    "A fantastic experience. Their team went above and beyond to
-                    ensure our needs were met."
+                    {renderContent('testimonial.reviews.second.text')}
                   </p>
                   <p className="mt-6 text-base font-medium text-gray-600">
-                    Jane Smith
+                    {renderContent('testimonial.reviews.second.author')}
                   </p>
                   <p className="text-base font-medium text-gray-400">
-                    Product Manager, Rareblocks
+                    {renderContent('testimonial.reviews.second.position')}
                   </p>
                 </div>
               </div>
@@ -119,14 +140,13 @@ const TestimonialSection = () => {
                     ))}
                   </div>
                   <p className="mt-4 text-lg font-medium text-gray-900">
-                    "Rareblocks helped us scale our business to new heights.
-                    Their attention to detail is unmatched."
+                    {renderContent('testimonial.reviews.third.text')}
                   </p>
                   <p className="mt-6 text-base font-medium text-gray-600">
-                    Sam Wilson
+                    {renderContent('testimonial.reviews.third.author')}
                   </p>
                   <p className="text-base font-medium text-gray-400">
-                    Marketing Director, Rareblocks
+                    {renderContent('testimonial.reviews.third.position')}
                   </p>
                 </div>
               </div>

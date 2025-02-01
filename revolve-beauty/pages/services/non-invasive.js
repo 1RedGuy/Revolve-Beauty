@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import ServiceFooter from "@/components/sections/ServicesSections/ServiceFooter";
 import Header from "../../components/Header";
 import NISection from "@/components/sections/ServicesSections/NISection";
 
@@ -9,7 +9,7 @@ const NonInvasive = () => {
     <div>
         <Header />
         <NISection />
-        <Footer />
+        <ServiceFooter />
     </div>
   );
 };

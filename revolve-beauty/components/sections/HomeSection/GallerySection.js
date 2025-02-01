@@ -1,9 +1,23 @@
 import React from "react";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useLanguage } from "../../../context/LanguageContext";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 const Carousel = () => {
-  const images = ["studio6.jpg", "studio1.jpg", "studio3.jpg", "studio4.jpg"];
+  const { isClient } = useLanguage();
+  const { t } = useTranslation();
+  const images = ["studio6.jpg", "studio12.png", "studio21.png"];
+
+  const renderContent = (key) => {
+    if (!isClient) {
+      const defaultValues = {
+        'gallery.title': 'Check Out Our Studio',
+      };
+      return defaultValues[key];
+    }
+    return t(key);
+  };
 
   // Custom Arrow Components
   const PrevArrow = ({ onClick }) => (
@@ -39,12 +53,12 @@ const Carousel = () => {
   return (
     <section className="bg-gradient-to-l from-studio_pink/25 to-transparent py-4 text-center">
       <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl">
-        Check Out Our Studio
+        {renderContent('gallery.title')}
       </h2>
       <div className="relative mx-auto w-full max-w-4xl pt-12">
         <Slider {...settings}>
           {images.map((src, index) => (
-            <div key={index} className="lg:h-[28rem ] h-64 md:h-96">
+            <div key={index} className="lg:h-[28rem] h-64 md:h-96">
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}

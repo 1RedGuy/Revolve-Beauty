@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import ServiceFooter from "@/components/sections/ServicesSections/ServiceFooter";
 import Header from "../../components/Header";
 import FBSection from "@/components/sections/ServicesSections/FBSection";
 
@@ -9,7 +9,7 @@ const FillersBotox = () => {
     <div>
         <Header />
         <FBSection />
-      < Footer />
+        <ServiceFooter />
     </div>
   );
 };

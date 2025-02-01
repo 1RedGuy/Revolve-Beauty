@@ -1,7 +1,34 @@
-import Footer from "../components/Footer";
+import ContactFooter from "../components/sections/ContactSections/ContactFooter";
 import Header from "../components/Header";
+import { useLanguage } from "../context/LanguageContext";
+import { useTranslation } from "../hooks/useTranslation";
 
 export default function ContactForm() {
+  const { isClient } = useLanguage();
+  const { t } = useTranslation();
+
+  const renderContent = (key) => {
+    if (!isClient) {
+      const defaultValues = {
+        'contact.getInTouch': 'Get In Touch',
+        'contact.inquiry': 'Have a specific inquiry or looking to explore new opportunities? Our experienced team is ready to engage with you.',
+        'contact.form.name': 'Full Name',
+        'contact.form.phone': 'Phone No.',
+        'contact.form.email': 'Email',
+        'contact.form.message': 'Write Message',
+        'contact.form.submit': 'Send Message',
+        'contact.email.title': 'Email us:',
+        'contact.email.description': 'Email us for general queries, including marketing and partnership opportunities.',
+        'contact.call.title': 'Call us:',
+        'contact.call.description': 'Call us to speak to a member of our team. We are always happy to help.',
+        'contact.location.title': 'Location',
+        'contact.location.description': 'Feel free to stop by and visit us at our location. We look forward to welcoming you!'
+      };
+      return defaultValues[key];
+    }
+    return t(key);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -37,11 +64,10 @@ export default function ContactForm() {
         {/* Form Section */}
         <div>
           <h2 className="text-3xl font-extrabold text-gray-800">
-            Get In Touch
+            {renderContent('contact.getInTouch')}
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-gray-500">
-            Have a specific inquiry or looking to explore new opportunities? Our
-            experienced team is ready to engage with you.
+            {renderContent('contact.inquiry')}
           </p>
 
           <form onSubmit={handleSubmit}>
@@ -49,27 +75,27 @@ export default function ContactForm() {
               <input
                 type="text"
                 name="name"
-                placeholder="Full Name"
+                placeholder={renderContent('contact.form.name')}
                 required
                 className="w-full border-b border-gray-300 bg-white px-2 py-3 text-sm text-gray-800 outline-none focus:border-studio_pink"
               />
               <input
                 type="number"
                 name="phone"
-                placeholder="Phone No."
+                placeholder={renderContent('contact.form.phone')}
                 required
                 className="w-full border-b border-gray-300 bg-white px-2 py-3 text-sm text-gray-800 outline-none focus:border-studio_pink"
               />
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder={renderContent('contact.form.email')}
                 required
                 className="w-full border-b border-gray-300 bg-white px-2 py-3 text-sm text-gray-800 outline-none focus:border-studio_pink"
               />
               <textarea
                 name="message"
-                placeholder="Write Message"
+                placeholder={renderContent('contact.form.message')}
                 required
                 className="w-full border-b border-gray-300 bg-white px-2 pt-3 text-sm text-gray-800 outline-none focus:border-studio_pink"
               />
@@ -94,7 +120,7 @@ export default function ContactForm() {
                   data-original="#000000"
                 />
               </svg>
-              Send Message
+              {renderContent('contact.form.submit')}
             </button>
           </form>
         </div>
@@ -104,7 +130,6 @@ export default function ContactForm() {
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2643.83680769475!2d23.336879111308573!3d42.65710877104659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8439aa06c4c9%3A0xa5da18b56993a130!2sStudentski%20Kompleks%2C%20ulitsa%20%22Professor%20Georgi%20Zlatarski%22%203%2C%201700%20Sofia!5e1!3m2!1sen!2sbg!4v1732539479669!5m2!1sen!2sbg"
             className="left-0 top-0 h-full w-full rounded-md"
-            frameBorder="0"
             allowFullScreen
           ></iframe>
         </div>
@@ -124,10 +149,11 @@ export default function ContactForm() {
               <path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z" />
             </svg>
           </div>
-          <h3 className="mt-4 text-xl font-semibold text-black">Email us:</h3>
+          <h3 className="mt-4 text-xl font-semibold text-black">
+            {renderContent('contact.email.title')}
+          </h3>
           <p className="mt-2 text-lg text-gray-500">
-            Email us for general queries, including marketing and partnership
-            opportunities.
+            {renderContent('contact.email.description')}
           </p>
           <a
             href="mailto:hello@flowbite.com"
@@ -147,10 +173,11 @@ export default function ContactForm() {
               <path d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
             </svg>
           </div>
-          <h3 className="mt-4 text-xl font-semibold text-black">Call us:</h3>
+          <h3 className="mt-4 text-xl font-semibold text-black">
+            {renderContent('contact.call.title')}
+          </h3>
           <p className="mt-2 text-lg text-gray-500">
-            Call us to speak to a member of our team. We are always happy to
-            help.
+            {renderContent('contact.call.description')}
           </p>
           <a href="tel:+16467865060" className="mt-4 block text-studio_pink">
             +359877183323
@@ -170,10 +197,11 @@ export default function ContactForm() {
               <path d="M0 0h48v48h-48z" fill="none" />
             </svg>
           </div>
-          <h3 className="mt-4 text-xl font-semibold text-black">Location</h3>
+          <h3 className="mt-4 text-xl font-semibold text-black">
+            {renderContent('contact.location.title')}
+          </h3>
           <p className="mt-2 text-lg text-gray-500">
-            Feel free to stop by and visit us at our location. We look forward
-            to welcoming you!
+            {renderContent('contact.location.description')}
           </p>
           <a href="/support" className="mt-4 block text-studio_pink">
             3 Prof. Georgi Zlatarski St., Sofia, Bulgaria.
@@ -181,39 +209,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <footer className="mt-10 p-4">
-        <div className="mx-auto w-full max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2024{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
-              Revolve Beauty
-            </a>
-            . All Rights Reserved.
-          </span>
-          <ul className="mt-3 flex flex-wrap items-center text-sm font-medium text-gray-500 sm:mt-0 dark:text-gray-400">
-            <li>
-              <a href="#" className="me-4 hover:underline md:me-6">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="me-4 hover:underline md:me-6">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" className="me-4 hover:underline md:me-6">
-                Licensing
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      </footer>
+      <ContactFooter />
     </div>
   );
 }

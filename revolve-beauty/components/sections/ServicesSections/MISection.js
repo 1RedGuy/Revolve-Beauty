@@ -1,8 +1,12 @@
 import React from "react";
 import ServicesImageTextSection from "./ProcedureSection";
-import { MissingSlotContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { useLanguage } from "../../../context/LanguageContext";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 const MISection = () => {
+  const { isClient } = useLanguage();
+  const { t } = useTranslation();
+
   return (
     <section>
       {/* Hero Section */}
@@ -10,14 +14,13 @@ const MISection = () => {
         <img src="/procedures-hero.jpg" className="h-full w-full object-cover" />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <p className="mb-2 text-xl uppercase text-white lg:mb-4">
-            Revitalize Your Skin
+            {t('services.mi.hero.subtitle')}
           </p>
           <h2 className="mb-4 mt-2 text-3xl font-bold text-white md:text-4xl lg:text-7xl">
-            Advanced Beauty Procedures
+            {t('services.mi.hero.title')}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-white md:text-xl">
-            Transform your look with our cutting-edge treatments designed to
-            rejuvenate, hydrate, and enhance your natural beauty.
+            {t('services.mi.hero.description')}
           </p>
         </div>
       </div>
@@ -25,14 +28,13 @@ const MISection = () => {
       {/* Section Title */}
       <div className="mt-10 text-center lg:mt-16">
         <p className="text-sm uppercase tracking-[0.2rem] text-studio_pink md:text-base">
-          Explore Our
+          {t('services.mi.section.subtitle')}
         </p>
         <h2 className="mt-6 text-3xl font-bold tracking-[0.2rem] text-pink-400 md:text-4xl lg:mt-10">
-          Premium Procedures
+          {t('services.mi.section.title')}
         </h2>
         <p className="mt-6 text-sm leading-relaxed text-gray-300 md:text-xl lg:mt-8">
-          Discover expert-crafted treatments to restore, rejuvenate, and
-          redefine your beauty. Tailored solutions for every need.
+          {t('services.mi.section.description')}
         </p>
       </div>
 
@@ -40,24 +42,23 @@ const MISection = () => {
       <div className="px-4 lg:px-16">
         <ServicesImageTextSection
           imgSrc="/skin_boosters.jpg"
-          title="Pluryal Skin Boosters"
-          description="Hydrate, rejuvenate, and enhance skin quality with this advanced treatment using hyaluronic acid to restore hydration and elasticity."
+          title={t('services.mi.procedures.boosters.title')}
+          description={t('services.mi.procedures.boosters.description')}
           listItems={[
-            "Face",
-            "Neck",
-            "Décolletage",
-            "Hands",
+            t('services.mi.procedures.boosters.listItems.0'),
+            t('services.mi.procedures.boosters.listItems.1'),
+            t('services.mi.procedures.boosters.listItems.2'),
+            t('services.mi.procedures.boosters.listItems.3')
           ]}
           details={{
-            description:
-              "Pluryal Skin Boosters improve skin hydration, elasticity, and texture for a smoother and more radiant complexion.",
+            description: t('services.mi.procedures.boosters.details.description'),
             items: [
-              "Boosts hydration",
-              "Enhances elasticity",
-              "Reduces fine lines",
+              t('services.mi.procedures.boosters.details.items.0'),
+              t('services.mi.procedures.boosters.details.items.1'),
+              t('services.mi.procedures.boosters.details.items.2')
             ],
-            duration: "1 hour",
-            price: "200lv",
+            duration: t('services.mi.procedures.boosters.details.duration'),
+            price: t('services.mi.procedures.boosters.details.price')
           }}
           reverse={false}
         />
@@ -66,25 +67,24 @@ const MISection = () => {
 
         <ServicesImageTextSection
           imgSrc="/lipolysis.jpg"
-          title="Lipolysis & Anticellulite"
-          description="A non-surgical treatment to reduce localized fat, contour the body, and improve skin tone using Pluryal Mesoline BodyContour."
+          title={t('services.mi.procedures.lipolysis.title')}
+          description={t('services.mi.procedures.lipolysis.description')}
           listItems={[
-            "Abdomen",
-            "Thighs",
-            "Hips",
-            "Upper arms",
-            "Chin",
+            t('services.mi.procedures.lipolysis.listItems.0'),
+            t('services.mi.procedures.lipolysis.listItems.1'),
+            t('services.mi.procedures.lipolysis.listItems.2'),
+            t('services.mi.procedures.lipolysis.listItems.3'),
+            t('services.mi.procedures.lipolysis.listItems.4')
           ]}
           details={{
-            description:
-              "Using fat-dissolving agents (PPC and DC), this treatment targets problem areas for a more sculpted and toned look.",
+            description: t('services.mi.procedures.lipolysis.details.description'),
             items: [
-              "Non-surgical fat reduction",
-              "Improves skin texture",
-              "Contours the body",
+              t('services.mi.procedures.lipolysis.details.items.0'),
+              t('services.mi.procedures.lipolysis.details.items.1'),
+              t('services.mi.procedures.lipolysis.details.items.2')
             ],
-            duration: "1 hour",
-            price: "200lv",
+            duration: t('services.mi.procedures.lipolysis.details.duration'),
+            price: t('services.mi.procedures.lipolysis.details.price')
           }}
           reverse={true}
         />
@@ -93,24 +93,23 @@ const MISection = () => {
 
         <ServicesImageTextSection
           imgSrc="/mesotherapy.jpg"
-          title="Mesotherapy for Face, Body & Hair"
-          description="A versatile treatment for skin rejuvenation, anti-aging, hair restoration, and fat reduction using Pluryal Mesoline."
+          title={t('services.mi.procedures.mesotherapy.title')}
+          description={t('services.mi.procedures.mesotherapy.description')}
           listItems={[
-            "Face",
-            "Scalp",
-            "Body",
-            "Hands",
+            t('services.mi.procedures.mesotherapy.listItems.0'),
+            t('services.mi.procedures.mesotherapy.listItems.1'),
+            t('services.mi.procedures.mesotherapy.listItems.2'),
+            t('services.mi.procedures.mesotherapy.listItems.3')
           ]}
           details={{
-            description:
-              "Pluryal Mesoline products use vitamins, peptides, and hyaluronic acid for hydration, fine line reduction, and hair restoration.",
+            description: t('services.mi.procedures.mesotherapy.details.description'),
             items: [
-              "Hydrates and rejuvenates skin",
-              "Reduces fine lines",
-              "Restores hair health",
+              t('services.mi.procedures.mesotherapy.details.items.0'),
+              t('services.mi.procedures.mesotherapy.details.items.1'),
+              t('services.mi.procedures.mesotherapy.details.items.2')
             ],
-            duration: "1 hour",
-            price: "200lv",
+            duration: t('services.mi.procedures.mesotherapy.details.duration'),
+            price: t('services.mi.procedures.mesotherapy.details.price')
           }}
           reverse={false}
         />
@@ -119,26 +118,25 @@ const MISection = () => {
 
         <ServicesImageTextSection
           imgSrc="/bio1.jpg"
-          title="Biorevitalization (Jalupro Line)"
-          description="Rejuvenate and hydrate your skin with tailored biorevitalization treatments using hyaluronic acid and amino acids."
+          title={t('services.mi.procedures.biorevitalization.title')}
+          description={t('services.mi.procedures.biorevitalization.description')}
           listItems={[
-            "Face",
-            "Neck",
-            "Décolletage",
-            "Hands",
+            t('services.mi.procedures.biorevitalization.listItems.0'),
+            t('services.mi.procedures.biorevitalization.listItems.1'),
+            t('services.mi.procedures.biorevitalization.listItems.2'),
+            t('services.mi.procedures.biorevitalization.listItems.3')
           ]}
           details={{
-            description:
-              "Jalupro Classic, HMW, Young Eye, and Superhydro improve elasticity, smooth fine lines, and create a radiant, youthful glow.",
+            description: t('services.mi.procedures.biorevitalization.details.description'),
             items: [
-              "Tailored solutions",
-              "Improves elasticity",
-              "Smooths fine lines",
-              "Collagen stimulation",
-              "Ligament regeneration",
+              t('services.mi.procedures.biorevitalization.details.items.0'),
+              t('services.mi.procedures.biorevitalization.details.items.1'),
+              t('services.mi.procedures.biorevitalization.details.items.2'),
+              t('services.mi.procedures.biorevitalization.details.items.3'),
+              t('services.mi.procedures.biorevitalization.details.items.4')
             ],
-            duration: "1 hour",
-            price: "200lv - 300lv",
+            duration: t('services.mi.procedures.biorevitalization.details.duration'),
+            price: t('services.mi.procedures.biorevitalization.details.price')
           }}
           reverse={true}
         />
@@ -147,24 +145,23 @@ const MISection = () => {
 
         <ServicesImageTextSection
           imgSrc="/lactic.jpg"
-          title="Poly-L-Lactic Acid (PLLA) Injections"
-          description="Achieve long-lasting volume and rejuvenation by stimulating natural collagen production with PLLA treatments."
+          title={t('services.mi.procedures.plla.title')}
+          description={t('services.mi.procedures.plla.description')}
           listItems={[
-            "Face",
-            "Neck",
-            "Hands",
-            "Body",
+            t('services.mi.procedures.plla.listItems.0'),
+            t('services.mi.procedures.plla.listItems.1'),
+            t('services.mi.procedures.plla.listItems.2'),
+            t('services.mi.procedures.plla.listItems.3')
           ]}
           details={{
-            description:
-              "PLLA injections like Lenisna and Juvelook improve skin texture and elasticity, with results that last up to 2 years.",
+            description: t('services.mi.procedures.plla.details.description'),
             items: [
-              "Stimulates collagen production",
-              "Restores natural volume",
-              "Enhances skin texture",
+              t('services.mi.procedures.plla.details.items.0'),
+              t('services.mi.procedures.plla.details.items.1'),
+              t('services.mi.procedures.plla.details.items.2')
             ],
-            duration: "1–2 hours",
-            price: "600lv–750lv",
+            duration: t('services.mi.procedures.plla.details.duration'),
+            price: t('services.mi.procedures.plla.details.price')
           }}
           reverse={false}
         />
@@ -173,52 +170,50 @@ const MISection = () => {
 
         <ServicesImageTextSection
           imgSrc="/micro.jpg"
-          title="Microneedling"
-          description="A minimally invasive treatment using tiny needles to stimulate collagen production and improve skin texture."
+          title={t('services.mi.procedures.microneedling.title')}
+          description={t('services.mi.procedures.microneedling.description')}
           listItems={[
-            "Face",
-            "Neck",
-            "Acne scars",
-            "Wrinkles",
+            t('services.mi.procedures.microneedling.listItems.0'),
+            t('services.mi.procedures.microneedling.listItems.1'),
+            t('services.mi.procedures.microneedling.listItems.2'),
+            t('services.mi.procedures.microneedling.listItems.3')
           ]}
           details={{
-            description:
-              "Microneedling enhances skin tone and texture while promoting natural healing. Results improve with multiple sessions.",
+            description: t('services.mi.procedures.microneedling.details.description'),
             items: [
-              "Reduces acne scars ",
-              "Improves skin texture",
-              "Minimally invasive",
+              t('services.mi.procedures.microneedling.details.items.0'),
+              t('services.mi.procedures.microneedling.details.items.1'),
+              t('services.mi.procedures.microneedling.details.items.2')
             ],
-            duration: "1 hour",
-            price: "150lv",
+            duration: t('services.mi.procedures.microneedling.details.duration'),
+            price: t('services.mi.procedures.microneedling.details.price')
           }}
           reverse={true}
         />
 
-<div className="border-[1px] border-studio_pink my-10"></div>
+        <div className="border-[1px] border-studio_pink my-10"></div>
 
         <ServicesImageTextSection
           imgSrc="/poly.jpg"
-          title="Polynucleotide Treatment"
-          description="A cutting-edge regenerative treatment using polynucleotides to improve skin elasticity, hydration, and repair damaged tissue."
+          title={t('services.mi.procedures.polynucleotide.title')}
+          description={t('services.mi.procedures.polynucleotide.description')}
           listItems={[
-            "Face",
-            "Neck",
-            "Hands",
-            "Dehydrated skin",
+            t('services.mi.procedures.polynucleotide.listItems.0'),
+            t('services.mi.procedures.polynucleotide.listItems.1'),
+            t('services.mi.procedures.polynucleotide.listItems.2'),
+            t('services.mi.procedures.polynucleotide.listItems.3')
           ]}
           details={{
-            description:
-              "Polynucleotide therapy with pluryal silk and densify revitalizes the skin by stimulating collagen production and deeply hydrating the dermis. It aids in tissue regeneration and repairs damage caused by aging or external factors.",
+            description: t('services.mi.procedures.polynucleotide.details.description'),
             items: [
-              "Boosts skin hydration",
-              "Improves elasticity and texture",
-              "Stimulates tissue repair",
+              t('services.mi.procedures.polynucleotide.details.items.0'),
+              t('services.mi.procedures.polynucleotide.details.items.1'),
+              t('services.mi.procedures.polynucleotide.details.items.2')
             ],
-            duration: "45 minutes",
-            price: "370lv - 480lv",
+            duration: t('services.mi.procedures.polynucleotide.details.duration'),
+            price: t('services.mi.procedures.polynucleotide.details.price')
           }}
-          reverse
+          reverse={false}
         />
 
       </div>
