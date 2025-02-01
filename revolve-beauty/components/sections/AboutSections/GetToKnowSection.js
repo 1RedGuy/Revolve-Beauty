@@ -49,6 +49,7 @@ const GetToknowSection = () => {
                 className="absolute inset-0 h-full w-full rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-[1.02]"
                 src="https://www.youtube.com/embed/GIRCiLVZOok"
                 title="YouTube Reel"
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>

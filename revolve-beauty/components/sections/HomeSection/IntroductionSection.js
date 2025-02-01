@@ -2,6 +2,7 @@ import Link from "next/link";
 import Card from "../../reusables/ServiceCards";
 import { useLanguage } from "../../../context/LanguageContext";
 import { useTranslation } from "../../../hooks/useTranslation";
+import Image from 'next/image';
 
 const IntroductionSection = () => {
   const { isClient } = useLanguage();
@@ -61,11 +62,15 @@ const IntroductionSection = () => {
 
           {/* Column 2: Image (hidden on mobile) */}
           <div className="hidden h-[30rem] w-full lg:block lg:w-[25%]">
-            <div className="flex h-full items-center justify-center overflow-hidden rounded-lg border-2 border-pink-300">
-              <img
-                src="543.jpg"
+            <div className="relative flex h-full items-center justify-center overflow-hidden rounded-lg border-2 border-pink-300">
+              <Image
+                src="/543.jpg"
                 alt="Beauty Treatment"
+                width={800}
+                height={1200}
                 className="h-full w-full object-cover"
+                loading="lazy"
+                quality={75}
               />
             </div>
           </div>

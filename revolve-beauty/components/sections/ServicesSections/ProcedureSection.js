@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from "next/link";
 import { useTranslation } from "../../../hooks/useTranslation";
 
@@ -94,10 +95,14 @@ const ServicesImageTextSection = ({
         {/* Image Section */}
         <div className="w-full md:w-[45%] lg:w-[40%]">
           <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-2xl transition-all hover:shadow-3xl">
-            <img
+            <Image
               src={imgSrc}
               alt={title}
+              width={800}
+              height={1200}
               className="h-full w-full object-cover object-center transform transition-transform hover:scale-105 duration-700"
+              quality={80}
+              priority={!reverse}
             />
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/30 to-transparent"></div>
           </div>

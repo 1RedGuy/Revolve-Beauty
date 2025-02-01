@@ -3,11 +3,16 @@ import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useLanguage } from "../../../context/LanguageContext";
 import { useTranslation } from "../../../hooks/useTranslation";
+import Image from 'next/image';
 
 const Carousel = () => {
   const { isClient } = useLanguage();
   const { t } = useTranslation();
-  const images = ["studio.jpg", "studio12.png", "studio21.png"];
+  const images = [
+    { src: "/studio.jpg", width: 1920, height: 1080 },
+    { src: "/studio12.png", width: 1920, height: 1080 },
+    { src: "/studio21.png", width: 1920, height: 1080 }
+  ];
 
   const renderContent = (key) => {
     if (!isClient) {
@@ -57,13 +62,19 @@ const Carousel = () => {
       </h2>
       <div className="relative mx-auto w-full max-w-4xl pt-12">
         <Slider {...settings}>
-          {images.map((src, index) => (
+          {images.map((image, index) => (
             <div key={index} className="lg:h-[28rem] h-64 md:h-96">
-              <img
-                src={src}
-                alt={`Slide ${index + 1}`}
-                className="h-full w-full rounded-lg object-cover"
-              />
+              <div className="relative h-full w-full">
+                <Image
+                  src={image.src}
+                  alt={`Slide ${index + 1}`}
+                  width={image.width}
+                  height={image.height}
+                  className="rounded-lg object-cover"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  quality={75}
+                />
+              </div>
             </div>
           ))}
         </Slider>

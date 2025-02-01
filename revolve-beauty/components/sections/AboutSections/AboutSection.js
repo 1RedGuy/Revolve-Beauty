@@ -1,5 +1,6 @@
 import { useLanguage } from "../../../context/LanguageContext";
 import { useTranslation } from "../../../hooks/useTranslation";
+import Image from 'next/image';
 
 const AboutSection = () => {
   const { isClient } = useLanguage();
@@ -105,10 +106,14 @@ const AboutSection = () => {
 
                 {/* Image container */}
                 <div className="relative rounded-lg p-2">
-                  <img
-                    className="relative z-10 w-full rounded-lg xl:mx-auto xl:max-w-lg 2xl:origin-bottom 2xl:scale-110"
-                    src="asd.png"
+                  <Image
+                    src="/asd.png"
                     alt="Dr. Maryann"
+                    width={800}
+                    height={1200}
+                    priority
+                    className="relative z-10 w-full rounded-lg xl:mx-auto xl:max-w-lg 2xl:origin-bottom 2xl:scale-110"
+                    quality={85}
                   />
                 </div>
               </div>

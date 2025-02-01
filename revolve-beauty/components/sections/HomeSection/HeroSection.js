@@ -2,7 +2,7 @@ import TickCircleIcon from "../../icons/TickCircleIcon";
 import Link from "next/link";
 import { useLanguage } from "../../../context/LanguageContext";
 import { useTranslation } from "../../../hooks/useTranslation";
-
+import Image from "next/image";
 const HeroSection = () => {
   const { isClient } = useLanguage();
   const { t } = useTranslation();
@@ -27,12 +27,16 @@ const HeroSection = () => {
 
   return (
     <section className="relative flex flex-col items-center justify-center border-b border-gray-400 bg-white px-6 py-12 pt-0 hero_lg:flex-row hero_lg:px-20 hero_lg:py-0 hero_lg:pl-[0px] hero_lg:pr-0">
-      <div className="mt-8 hidden hero_lg:mt-0 hero_lg:flex hero_lg:w-[50%]">
+       <div className="mt-8 hidden hero_lg:mt-0 hero_lg:flex hero_lg:w-[50%]">
         <div className="relative h-80 w-80 hero_lg:h-full hero_lg:w-full">
-          <img
-            src="test_resize.png"
-            className="object-cover hero_lg:h-full hero_lg:w-full"
+          <Image
+            src="/test_resize.png"
             alt="hero"
+            width={1920}
+            height={1080}
+            priority
+            className="object-cover hero_lg:h-full hero_lg:w-full"
+            quality={85}
           />
         </div>
       </div>
