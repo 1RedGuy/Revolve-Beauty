@@ -7,7 +7,7 @@ import { useTranslation } from "../../../hooks/useTranslation";
 const Carousel = () => {
   const { isClient } = useLanguage();
   const { t } = useTranslation();
-  const images = ["studio6.jpg", "studio12.png", "studio21.png"];
+  const images = ["studio.jpg", "studio12.png", "studio21.png"];
 
   const renderContent = (key) => {
     if (!isClient) {
