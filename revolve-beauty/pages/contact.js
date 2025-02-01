@@ -203,7 +203,7 @@ export default function ContactForm() {
           <p className="mt-2 text-lg text-gray-500">
             {renderContent('contact.location.description')}
           </p>
-          <a href="/support" className="mt-4 block text-studio_pink">
+          <a className="mt-4 block text-studio_pink">
             3 Prof. Georgi Zlatarski St., Sofia, Bulgaria.
           </a>
         </div>
