@@ -10,8 +10,11 @@ module.exports = {
         hero_lg: "1245px",
       },
       colors: {
-        studio_pink: "#FD83D0",
+        studio_pink: "#FF69B4",
         dark_gray: "#FFFFFF",
+      },
+      boxShadow: {
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
       },
     },
   },

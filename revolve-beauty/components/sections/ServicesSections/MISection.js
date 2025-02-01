@@ -11,7 +11,8 @@ const MISection = () => {
     <section>
       {/* Hero Section */}
       <div className="relative flex h-[400px] w-full items-center justify-center border-b-[1px] border-gray-800 lg:h-[600px]">
-        <img src="/procedures-hero.jpg" className="h-full w-full object-cover" />
+        <img src="/kjh.jpg" className="h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <p className="mb-2 text-xl uppercase text-white lg:mb-4">
             {t('services.mi.hero.subtitle')}
