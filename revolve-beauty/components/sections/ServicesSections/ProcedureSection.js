@@ -76,6 +76,7 @@ const ServicesImageTextSection = ({
                     <Link 
                       href="/contact" 
                       className="text-studio_pink underline hover:text-pink-600 transition-colors"
+                      aria-label="Contact us for more information about this treatment"
                     >
                       {t('common.contactUs')}
                     </Link>
@@ -83,7 +84,10 @@ const ServicesImageTextSection = ({
                 </li>
               </ul>
               
-              <Link href="/contact">
+              <Link 
+                href="/contact" 
+                aria-label={`Book now for ${title} treatment`}
+              >
                 <button className="mt-6 w-full sm:w-auto rounded-lg bg-studio_pink px-6 py-3 font-medium text-white transition-all hover:bg-pink-600 hover:shadow-md active:transform active:scale-95">
                   {t('common.bookNow')}
                 </button>

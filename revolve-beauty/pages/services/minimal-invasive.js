@@ -11,6 +11,8 @@ const MinimalInvasive = () => {
       <Head>
         <title>Minimal Invasive Treatments | Revolve Beauty</title>
         <meta name="description" content="Advanced minimal invasive treatments for skin rejuvenation and beauty enhancement at Revolve Beauty." />
+        <meta name="keywords" content="minimal invasive, skin treatments, beauty enhancement, skin rejuvenation" />
+        <link rel="canonical" href="https://revolvebeauty.com/services/minimal-invasive" />
       </Head>
       <div>
         <Header />

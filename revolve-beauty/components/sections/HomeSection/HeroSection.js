@@ -62,12 +62,18 @@ const HeroSection = () => {
           </span>
         </p>
         <div className="flex w-full items-center justify-center gap-6">
-          <Link href="/contact">
+          <Link 
+            href="/contact"
+            aria-label="Book your beauty treatment appointment"
+          >
             <button className="min-w-[200px] rounded-full bg-pink-500 px-4 py-[10px] text-lg font-medium text-white shadow-2xl shadow-pink-200 sm:px-6 hero_lg:min-w-[240px] hero_lg:px-[56px]">
               {renderContent('hero.buttons.book')}
             </button>
           </Link>
-          <Link href="#services">
+          <Link 
+            href="#services"
+            aria-label="View our beauty and cosmetic services"
+          >
             <button className="min-w-[200px] rounded-full border border-pink-500 bg-white px-4 py-[10px] text-lg font-medium text-gray-800 shadow-2xl shadow-pink-200 sm:px-6 hero_lg:min-w-[240px] hero_lg:px-[56px]">
               {renderContent('hero.buttons.services')}
             </button>
