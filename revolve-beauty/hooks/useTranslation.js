@@ -152,21 +152,25 @@ const en = {
       hero: {
         subtitle: "Our Services",
         title: "Botox & Fillers",
-        description: "Experience expert care and precision with our Botox and filler treatments, designed to help you achieve a refreshed, natural appearance."
+        description: "Experience expert care and precision with our Botox and filler treatments,",
+        description2: "designed to help you achieve a refreshed, natural appearance."
       },
       section: {
         subtitle: "Have a look at our",
         title: "Premium Procedures",
-        description: "Why settle for ordinary treatments when you can experience tailored enhancements that bring out your natural beauty in a way only true expertise can deliver?"
+        description: "Why settle for ordinary treatments when you can experience tailored enhancements",
+        description2: "that bring out your natural beauty in a way only true expertise can deliver?"
       },
       procedures: {
         fillers: {
           title: "Dermal Fillers",
           description: "Enhance your natural features with dermal fillers, designed to restore volume, smooth wrinkles, and contour the face. Enjoy immediate, naturally looking results. Often used for:",
-          listItems: ["Crow's feet", "Smile lines", "Nasolabial folds"],
+          listItems: ["Cheeks", "Lips", "Jaw and chin", "Nasolabial folds"],
           details: {
             description: "We use premium fillers like Revolax, Restylane, Pluryal, and Teosyal. We offer results that last from 6 months to 2 years. These procedures are:",
             items: ["Safe", "Customized", "Minimal Invasive"],
+            duration: "1-2 hours",
+            price: "250-500 BGN"
           }
         },
         botox: {
@@ -176,6 +180,8 @@ const en = {
           details: {
             description: "Botox provides visible results in 7-14 days and lasts 4-6 months. This procedure is:",
             items: ["Quick", "Natural Effect", "Effective against wrinkles and fine lines"],
+            duration: "40 minutes",
+            price: "150 BGN per zone"
           }
         }
       }
@@ -183,13 +189,92 @@ const en = {
     mi: {  // Medical Injections
       hero: {
         subtitle: "Revitalize Your Skin",
-        title: "Advanced Beauty Procedures",
+        title: "Minimal Invasive Procedures",
         description: "Transform your look with our cutting-edge treatments designed to rejuvenate, hydrate, and enhance your natural beauty."
       },
       section: {
         subtitle: "Explore Our",
         title: "Premium Procedures",
         description: "Discover expert-crafted treatments to restore, rejuvenate, and redefine your beauty. Tailored solutions for every need."
+      },
+      procedures: {
+        boosters: {
+          title: "Pluryal Skin Boosters",
+          description: "Hydrate, rejuvenate, and improve skin quality with this advanced procedure using hyaluronic acid to restore hydration and elasticity.",
+          listItems: ["Face", "Neck", "Décolletage", "Hands"],
+          details: {
+            description: "Pluryal Skin Boosters improve hydration, elasticity, and skin texture for a smoother, more radiant complexion.",
+            items: ["Improves hydration", "Increases elasticity", "Reduces fine lines"],
+            duration: "1 hour",
+            price: "200 BGN"
+          }
+        },
+        lipolysis: {
+          title: "Lipolysis & Anti-cellulite",
+          description: "Non-surgical procedure for reducing localized fat, body contouring, and improving skin tone with Pluryal Mesoline BodyContour.",
+          listItems: ["Abdomen", "Thighs", "Hips", "Arms", "Chin"],
+          details: {
+            description: "Using fat-dissolving agents (PPC and DC), this procedure treats problem areas for a more sculpted and toned body.",
+            items: ["Non-surgical fat reduction", "Improves skin texture", "Body contouring"],
+            duration: "1 hour",
+            price: "200 BGN"
+          }
+        },
+        mesotherapy: {
+          title: "Face, Body & Hair Mesotherapy",
+          description: "Multi-purpose procedure for skin rejuvenation, anti-aging, hair restoration, and fat reduction with Pluryal Mesoline.",
+          listItems: ["Face", "Scalp", "Body", "Hands"],
+          details: {
+            description: "Pluryal Mesoline products use vitamins, peptides, and hyaluronic acid for hydration, fine line reduction, and hair restoration.",
+            items: ["Hydrates and rejuvenates skin", "Reduces fine lines", "Restores hair health"],
+            duration: "1 hour",
+            price: "200 BGN"
+          }
+        },
+        biorevitalization: {
+          title: "Biorevitalization (Jalupro Line)",
+          description: "Rejuvenate and hydrate your skin with personalized biorevitalization procedures using hyaluronic acid and amino acids.",
+          listItems: ["Face", "Neck", "Décolletage", "Hands"],
+          details: {
+            description: "Jalupro Classic, HMW, Young Eye, and Superhydro improve elasticity, smooth fine lines, and create a youthful glow.",
+            items: ["Personalized solutions", "Improves elasticity", "Smooths fine lines", "Stimulates collagen", "Regenerates ligaments"],
+            duration: "1 hour",
+            price: "200-300 BGN"
+          }
+        },
+        plla: {
+          title: "Poly-L-Lactic Acid (PLLA) Injections",
+          description: "Achieve long-lasting volume and rejuvenation through natural collagen stimulation with PLLA procedures.",
+          listItems: ["Face", "Neck", "Hands", "Body"],
+          details: {
+            description: "PLLA injections like Lenisna and Juvelook improve skin texture and elasticity, with results lasting up to 2 years.",
+            items: ["Stimulates collagen production", "Restores natural volume", "Improves skin texture"],
+            duration: "1-2 hours",
+            price: "600-750 BGN"
+          }
+        },
+        microneedling: {
+          title: "Microneedling",
+          description: "Minimally invasive procedure using micro-needles to stimulate collagen and improve skin texture.",
+          listItems: ["Face", "Neck", "Acne scars", "Wrinkles"],
+          details: {
+            description: "Microneedling improves skin tone and texture by stimulating natural healing. Results improve with multiple sessions.",
+            items: ["Reduces acne scars", "Improves skin texture", "Minimally invasive"],
+            duration: "1 hour",
+            price: "150 BGN"
+          }
+        },
+        polynucleotide: {
+          title: "Polynucleotide Therapy",
+          description: "Advanced regenerative procedure using polynucleotides to improve elasticity, hydration, and repair damaged tissues.",
+          listItems: ["Face", "Neck", "Hands", "Dehydrated skin"],
+          details: {
+            description: "Polynucleotide therapy with pluryal silk and densify revitalizes skin through collagen stimulation and deep dermal hydration. Supports tissue regeneration and repairs damage caused by aging or external factors.",
+            items: ["Improves skin hydration", "Enhances elasticity and texture", "Stimulates tissue repair"],
+            duration: "45 minutes",
+            price: "370-480 BGN"
+          }
+        }
       }
     },
     ni: {  // Non-Invasive
@@ -428,7 +513,7 @@ const bg = {
       section: {
         subtitle: "Разгледайте нашите",
         title: "Премиум Процедури",
-        description: "Защо да се задоволявате с обикновени процедури, когато можете да изпитате персонализирани подобрения",
+        description: "Защо да се задоволявате с обикновени процедури, когато можете да изпитате персонализирани подобрения,",
         description2: "които подчертават естествената ви красота по начин, който само истинската експертиза може да предложи?"
       },
       procedures: {
@@ -459,7 +544,7 @@ const bg = {
     mi: {
       hero: {
         subtitle: "Възстановете Кожата Си",
-        title: "Модерни Процедури за Красота",
+        title: "Минимално Инвазивни Процедури",
         description: "Трансформирайте външния си вид с нашите съвременни процедури, създадени да подмладят, хидратират и подобрят естествената ви красота."
       },
       section: {
